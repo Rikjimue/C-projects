@@ -106,14 +106,6 @@ Decompresses files created by wzip.
 - Memory allocation failures
 - Malformed input validation
 
-## Limitations
-
-These implementations focus on core functionality:
-- **wcat**: No line numbering or formatting options
-- **wgrep**: Simple substring matching, no regular expressions
-- **wzip/wunzip**: Basic run-length encoding, not general-purpose compression
-- **All**: Simplified error messages compared to full utilities
-
 ## Testing
 
 ```bash
@@ -127,4 +119,7 @@ echo "search this line" | ./wgrep "this"
 # Test compression roundtrip
 echo "aaabbbccc" | ./wzip > test.z
 ./wunzip test.z
+
+# Clean up
+rm test.txt test.z
 ```
